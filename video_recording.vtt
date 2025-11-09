@@ -1,129 +1,127 @@
 WEBVTT
 
-
-00:00:01.660 --> 00:00:07.660
+00:00:00.000 --> 00:00:06.660
 Hello guys, this is Aiden, this is my Blueberry AI software engineering intern test project.
 
-00:00:08.274 --> 00:00:17.274
-It's a small, full-stack app with two parts. Python, uh, webcraper, and a React plus Y plus, uh, TypeScript.
+00:00:07.195 --> 00:00:15.018
+It's a small, full-stack app with two parts. Python, uh, webcraper, and a React plus Vite plus, uh, TypeScript.
 
-00:00:18.434 --> 00:00:23.434
-Front end. The scrapper just collects data from the code to scribe.com.
+00:00:15.946 --> 00:00:20.376
+Front end. The scrapper just collects data from the quotes.toscribe.com.
 
-00:00:23.875 --> 00:00:28.875
+00:00:20.765 --> 00:00:25.108
 And the front end just visualized that with search filtering, sorting, and charts.
 
-00:00:28.568 --> 00:00:41.568
-Uh, so let's start by running the scrapper. I'll just activate… I have just rectified my scraper, you can just use this tutorial to set up your environment using Conda, or mini-Conda, actually.
+00:00:24.837 --> 00:00:36.145
+Uh, so let's start by running the scrapper. I'll just activate… I have just activated my scraper, you can just use this tutorial to set up your environment using Conda, or mini-Conda, actually.
 
-00:00:42.029 --> 00:00:47.029
+00:00:36.547 --> 00:00:41.763
 I'll just use this one. To just do the running things.
 
-00:00:46.931 --> 00:00:52.931
-Uh, so, does preparators cross the first, uh, 10 pages of the codes?
+00:00:41.679 --> 00:00:47.851
+Uh, so, the scraper just crawls the first, uh, 10 pages of the quotes.
 
-00:00:52.918 --> 00:00:57.918
-Uh, the codes, uh, it sends HTTP request, parse H line.
+00:00:47.842 --> 00:00:52.842
+Uh, the quotes, uh, it sends HTTP request, parse each lines.
 
-00:00:58.296 --> 00:01:06.296
-each quote, text, uh, author, and tags using the beautiful sub, and it follows the technician until it reaches the end.
+00:00:53.122 --> 00:01:00.748
+each quote, text, uh, author, and tags using the beautiful soup, and it follows the pagination until it reaches the end.
 
-00:01:06.851 --> 00:01:09.851
-So, all the results, as you can see here.
+00:01:01.348 --> 00:01:04.729
+So, as the results, as you can see here.
 
-00:01:10.496 --> 00:01:19.496
-Has been saved to the items.jsang. So each line is a Jason object with text, author.
+00:01:05.221 --> 00:01:13.473
+Has been saved to the items.jsonl. So each line is a JSOL object with text, author.
 
-00:01:20.053 --> 00:01:26.053
-tax and page URL. So this felt, it's like a bridge between the backend to the front end.
+00:01:13.953 --> 00:01:18.079
+tags and page URL. So this felt, it's like a bridge between the backend to the front end.
 
-00:01:25.883 --> 00:01:33.883
+00:01:17.896 --> 00:01:24.603
 So, next, let's start the front end, uh, so I can… I've just created a symbolic link.
 
-00:01:33.973 --> 00:01:40.973
+00:01:24.681 --> 00:01:30.415
 Uh… which, as actually, uh… From the scrappers data folder.
 
-00:01:40.566 --> 00:01:56.566
+00:01:30.140 --> 00:01:43.100
 Uh, to the user's public folder. Uh, so you can see here… So these two, uh, data… are linked with each other, so the front end can just always load the latest data automatically.
 
-00:01:56.583 --> 00:02:05.583
-So that's just, uh… Uh, wrong, the… UI 6.
+00:01:43.114 --> 00:01:51.811
+So let's just, uh… Uh, run, the… UI things.
 
-00:02:06.031 --> 00:02:13.031
-CD UI, and then… Install… And… wait.
+00:01:52.201 --> 00:01:58.287
+CD UI, and npm Install… And… wait.
 
-00:02:12.560 --> 00:02:28.560
-to the Rona Davis operable. So, uh, this is just, uh… Here we can see our codes displays on the table. I can search the text of the code or the authors.
+00:01:57.796 --> 00:02:12.643
+until the run dev is available. So, uh, this is just, uh… Here we can see our quotes displays on the table. I can search the text of the code or the authors.
 
-00:02:28.627 --> 00:02:33.627
-Uh, something like the upper… As you can see here, Albert is available.
+00:02:12.700 --> 00:02:17.164
+Uh, something like the Albert As you can see here, Albert is available.
 
-00:02:34.445 --> 00:02:40.445
-And also doing some filters, uh, something like if the… if we are going to filter this live.
+00:02:17.774 --> 00:02:23.476
+And also doing some filters, uh, something like if the… if we are going to filter this life.
 
-00:02:40.763 --> 00:02:47.763
-The live, uh… The quotes with TaxUp Live are available here.
+00:02:23.710 --> 00:02:29.669
+The life, uh… The quotes with the text of Live are available here.
 
-00:02:48.319 --> 00:03:00.319
-And you can also do the sorting things using… Just clicking the table, uh… title, and also for the technician, you can just click the button here to change the pages.
+00:02:30.188 --> 00:02:41.760
+And you can also do the sorting things using… Just clicking the table, uh… title, and also for the pagination, you can just click the button here to change the pages.
 
-00:03:00.160 --> 00:03:05.160
-Um, we have allowed 10 quotes. I have a lot in calls from.
+00:02:41.625 --> 00:02:46.509
+Um, we have allowed 10 quotes. I have allowed 10 quotes from.
 
-00:03:04.812 --> 00:03:15.812
-For one page. And… Licking a role, as you can see here, just opens the course details, uh, with the quotes, the author, the tag, and the URL.
+00:02:46.359 --> 00:02:56.363
+For one page. And… Licking a row, as you can see here, just opens the quote details, uh, with the quotes, the author, the tag, and the URL.
 
-00:03:16.786 --> 00:03:24.786
-And at the bottom, there are… a chart showing how many calls each author has. So, Albert has them.
+00:02:57.118 --> 00:03:04.073
+And at the bottom, there are… a chart showing how many quptes each author has. So, Albert has them.
 
-00:03:25.381 --> 00:03:32.381
-Most, uh, codes available. So let's just go back to the cost to briefly walk through the coast itself.
+00:03:04.674 --> 00:03:10.762
+Most, uh, quotes available. So let's just go back to the codes to briefly walk through the codes itself.
 
-00:03:32.810 --> 00:03:38.810
+00:03:11.147 --> 00:03:16.356
 So, in the scraper, uh, in the scraper. Uh, there are a few.
 
-00:03:38.794 --> 00:03:44.794
+00:03:16.342 --> 00:03:21.504
 Uh… structures, uh, there are a few modules, uh, so the main module.
 
-00:03:44.938 --> 00:03:55.938
-Uh, just handles the crying loop. And the parser… the parser just, uh, doing the parsing codes from the given HTML content.
+00:03:21.686 --> 00:03:31.325
+Uh, just handles the crawling loop. And the parser… the parser just, uh, doing the parsing codes from the given HTML content.
 
-00:03:56.362 --> 00:04:04.362
-Uh, the fetcher, uh… a fetcher is more like a whopping request, uh, with entries and delays. The technician.
+00:03:31.708 --> 00:03:38.579
+Uh, the fetcher, uh… a fetcher is more like a warpping request, uh, with entries and delays. The pagniation.
 
-00:04:05.352 --> 00:04:08.352
+00:03:39.302 --> 00:03:42.041
 As, uh, checking or finding the next page link.
 
-00:04:08.324 --> 00:04:13.324
+00:03:42.020 --> 00:03:46.319
 And the types is, uh, just, uh, provides a data structure.
 
-00:04:13.178 --> 00:04:20.178
+00:03:46.060 --> 00:03:52.232
 Which we'll be using for the parser. And so this design makes the scrapper easy to test, and.
 
-00:04:19.904 --> 00:04:25.904
+00:03:52.004 --> 00:03:57.051
 As you can see here, I've made a few tests for the parser and the.
 
-00:04:26.098 --> 00:04:37.098
-everything deprecation. Um… so this main file just runs the fetch, parse save cycle, and writes everything to the JSON file under data.
+00:03:57.301 --> 00:04:07.057
+everything-integration. Um… so this main file just runs the fetch, parse, save cycle, and writes everything to the JSON file under data.
 
-00:04:36.875 --> 00:04:51.875
-And it's for the front end, uh, the, uh… components I've created, including a… Belter, uh, just, just… It's just a displaced, uh, it just handles the search and tag filtering.
+00:04:06.847 --> 00:04:19.157
+And it's for the front end, uh, the, uh… components I've created, including a… Filter, uh, just, just… It's just a, uh, it just handles the search and tag filtering.
 
-00:04:51.640 --> 00:04:58.640
+00:04:19.008 --> 00:04:25.253
 And the table… table is, uh, just displays the data with sorting and technicians.
 
-00:04:59.232 --> 00:05:05.232
-And also for the charts, uh, use the recharge to visualize the.
+00:04:25.851 --> 00:04:31.156
+And also for the charts, uh, use the recharts to visualize the.
 
-00:05:04.477 --> 00:05:13.477
+00:04:30.414 --> 00:04:38.153
 quotes, and apps. Uh… It's actually just, uh, loading everything and ties everything together.
 
-00:05:14.784 --> 00:05:22.784
-So, uh, so all data stays client-side, no back-end PIs needed, just a clean separation between data collection and presentation.
+00:04:39.027 --> 00:04:46.725
+So, uh, so all data stays client-side, no back-end APIs needed, just a clean separation between data collection and presentation.
 
-00:05:22.636 --> 00:05:27.636
+00:04:46.583 --> 00:04:51.147
 So, overall, this project demonstrated a full pipeline collecting structured data.
 
-00:05:27.961 --> 00:05:31.961
+00:04:51.360 --> 00:04:55.041
 Uh, with Python and building an interactive UI to support it.
-
