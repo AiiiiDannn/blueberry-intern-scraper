@@ -22,7 +22,7 @@ def fetch_url(
 
     for attempt in range(1, retries + 1):
         try:
-            print(f"Fetching ({attempt}/{retries}): {url}")
+            print(f"Fetching attempt ({attempt}/{retries}): {url}")
             response = requests.get(url, headers=headers, timeout=10)
             response.raise_for_status()  # raise error if HTTP not 200
             return response.text

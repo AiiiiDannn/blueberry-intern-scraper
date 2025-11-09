@@ -36,11 +36,10 @@ def main(start_url, max_pages, delay_ms, dry_run):
     page_count = 0
 
     # make sure data folder exists
-    data_dir = (
-        Path(__file__).resolve().parents[1] / "data"
-    )  # __file__ is the current file path, .resolve() gets absolute path, .parents[1] goes two levels up
-    data_dir.mkdir(exist_ok=True)
-    output_path = data_dir / "items.jsonl"
+    project_root = Path(__file__).resolve().parents[2]
+    output_dir = project_root / "scraper" / "data"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "items.jsonl"
 
     print(f"Starting crawl from: {start_url}")
 
