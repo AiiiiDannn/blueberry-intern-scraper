@@ -57,7 +57,7 @@ Visit: **[http://localhost:5173](http://localhost:5173)**
 
 - **Separation of concerns:** scraper and UI are independent modules.
 - **Scraper:** modularized into `fetcher`, `parser`, `pagination`, `robots`, `types`.
-- **UI:** focuses on clear data flow and usability — built with `React + Vite`.
+- **UI:** focuses on clear data flow and usability - built with `React + Vite`.
 - **Visualization:** `Recharts` used for a simple bar chart.
 - **Filtering / Sorting / Pagination:** all done client-side for speed and simplicity.
 
