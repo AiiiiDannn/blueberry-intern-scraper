@@ -1,6 +1,6 @@
 # scraper/src/main.py
-import requests
-import time
+# import requests
+# import time    # replaced by fetcher module
 import json
 import click
 from pathlib import Path
@@ -8,6 +8,7 @@ from pathlib import Path
 # import helper modules, which were available in the same folder
 from .parser import parse_quotes
 from .pagination import get_next_page
+from .fetcher import fetch_url
 
 
 @click.command()
@@ -49,15 +50,11 @@ def main(start_url, max_pages, delay_ms, dry_run):
     ):  # make sure we don't exceed max pages, and have a valid URL
         print(f"\nPage {page_count + 1}: {current_url}")
 
-        # send GET request, trying to fetch the html content
-        try:
-            response = requests.get(current_url, timeout=10)
-            response.raise_for_status()
-        except requests.RequestException as e:  # stop if request fails
-            print(f"Request failed: {e}")
+        # replaced requests.get() with fetch_url()
+        content = fetch_url(current_url, delay=delay_ms / 1000)
+        if not content:
+            print(f"Skipping page {current_url} (empty or failed response)")
             break
-
-        content = response.text
 
         # parse quotes from this page
         items = parse_quotes(content, current_url)
@@ -71,8 +68,9 @@ def main(start_url, max_pages, delay_ms, dry_run):
         next_url = get_next_page(content, current_url)
         current_url = next_url
 
-        # wait politely before next request
-        time.sleep(delay_ms / 1000)
+        # # wait politely before next request
+        # time.sleep(delay_ms / 1000)
+        # Done in fetch_url()
 
         # if there is no next page, stop the loop
         if not next_url:
@@ -85,6 +83,16 @@ def main(start_url, max_pages, delay_ms, dry_run):
         print(f"Total pages visited: {page_count}")
         print(f"Total quotes collected: {len(all_items)}")
         return  # exit early
+
+    # dedup by stable key
+    seen = set()
+    deduped_items = []
+    for item in all_items:
+        stable_key = (item["text"], item["author"])
+        if stable_key not in seen:
+            seen.add(stable_key)
+            deduped_items.append(item)
+    all_items = deduped_items
 
     # write all collected quotes to JSONL file
     with output_path.open("w", encoding="utf-8") as f:

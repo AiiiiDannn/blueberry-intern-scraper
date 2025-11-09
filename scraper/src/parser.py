@@ -1,8 +1,9 @@
 # scraper/src/parser.py
 from bs4 import BeautifulSoup
+from .types import QuoteItem
 
 
-def parse_quotes(content: str, page_url: str):
+def parse_quotes(content: str, page_url: str) -> list[QuoteItem]:
     """
     Parse quotes from the given HTML content.
 
@@ -11,7 +12,7 @@ def parse_quotes(content: str, page_url: str):
         page_url (str): The URL of the page being parsed.
 
     Returns:
-        list: A list of dictionaries, each containing the text, author, tags, and page URL of a quote.
+        list[QuoteItem]: A list of QuoteItem objects, each containing the text, author, tags, and page URL of a quote.
     """
 
     soup = BeautifulSoup(
