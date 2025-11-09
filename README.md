@@ -13,10 +13,10 @@ A small full-stack project including:
 
 ```bash
 cd blueberry-intern-scraper
-python -m venv venv
-source venv/bin/activate   # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
-python -m scraper.src.main --max-pages 10
+conda create -n scraper python=3.10
+conda activate scraper
+pip install -r scraper/requirements.txt
+python -m scraper.src.main --max-pages 10    # or any other numbers of pages you'd like
 ```
 
 Output will be saved at:
@@ -29,8 +29,16 @@ scraper/data/items.jsonl
 
 Link data for the UI:
 
-```bash
+**For macOS/Linux**
+
+```
 ln -s ../../scraper/data ui/public/data
+```
+
+**For Windows (PowerShell)**
+
+```
+New-Item -ItemType SymbolicLink -Path "ui/public/data" -Target "..\..\scraper\data"
 ```
 
 Then start the dev server:
